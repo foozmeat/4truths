@@ -1,3 +1,6 @@
+Not much to see here yet
+
+### Notes
 apt install xvfb python3.7 firefox-geckodriver
 apt uninstall python3.6
 
