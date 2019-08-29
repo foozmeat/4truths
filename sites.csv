@@ -1,4 +1,4 @@
-Site,B,Q
+Site,URL,B,Q
 ABC,https://abcnews.go.com,-0.875,50.875
 Al Jazeera,https://www.aljazeera.com,-1.5,48.0
 AP,https://apnews.com,-0.25,52.125
@@ -26,7 +26,6 @@ Forward,https://forward.com,-2.75,38.125
 Huffington Post,https://www.huffpost.com,-12.5,37.75
 IJR,https://ijr.com,4.125,45.75
 Intercept,https://theintercept.com,-16.5,37.5
-Jacobin,https://www.jacobinmag.com,-19.33,37.25
 LA Times,https://www.latimes.com,-2.0,49.67
 Marketwatch,https://www.marketwatch.com,0.29000000000000004,48.335
 Mother Jones,https://www.motherjones.com,-14.5,41.25
@@ -39,7 +38,6 @@ News and Guts,https://www.newsandguts.com,-8.67,35.67
 NewsMax,https://www.newsmax.com,8.375,36.25
 Newsy,https://www.newsy.com,-1.335,50.875
 One America News Network,https://www.oann.com,8.085,37.375
-OZY,https://www.ozy.com,-3.335,44.0
 PBS,https://www.pbs.org,-0.875,46.75
 Politico,https://www.politico.com,-6.5,46.25
 "Progressive, The",https://progressive.org,-16.96,38.5
@@ -57,11 +55,9 @@ The Guardian,https://www.theguardian.com,-6.5,50.0
 The Hill,https://thehill.com,-1.25,46.75
 The Nation,https://www.thenation.com,-17.0,32.75
 The New Yorker,https://www.newyorker.com,-5.75,42.0
-The Skimm,https://www.theskimm.com,-3.375,42.71
 Think Progress,https://thinkprogress.org,-19.5,35.33
 Time,http://time.com,-3.75,41.75
 USA Today,https://www.usatoday.com,-1.375,48.29
-Vanity Fair,https://www.vanityfair.com,-17.0,33.25
 Vice,https://news.vice.com,-10.75,43.0
 Vox,https://www.vox.com,-9.625,43.125
 Wall Street Journal,https://www.wsj.com,1.33,50.25
@@ -69,4 +65,3 @@ Washington Examiner,https://www.washingtonexaminer.com,10.71,37.375
 Washington Free Beacon,https://freebeacon.com,16.75,36.125
 Washington Post,https://www.washingtonpost.com,-3.75,47.25
 Washington Times,https://www.washingtontimes.com,13.0,39.0
-Weather.com,https://weather.com,-2.67,52.67
