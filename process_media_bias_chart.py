@@ -40,6 +40,7 @@ sites_to_remove = [
     'Vanity Fair',
     'OZY',
     'Weather.com',
+    'Marketwatch',
 ]
 
 """
