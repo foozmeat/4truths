@@ -46,19 +46,26 @@ sites_to_remove = [
 """
 Clean out sites we don't want and figure out where to split the buckets
 """
+all_b_meds = []
+
 for site, data in sites.items():
     q_med = statistics.median(data['q'])
 
     if q_med >= 32.0 and site not in sites_to_remove:
         b_med = statistics.median(data['b'])
-
-        if b_med >= 0:
-            r_biases.append(b_med)
-        else:
-            l_biases.append(b_med)
+        all_b_meds.append(b_med)
 
         data = (site, sites[site]['url'], b_med, q_med)
         sites_to_save.append(data)
+
+median = statistics.median(all_b_meds)
+print(f"Overall median is {median}")
+for b_med in all_b_meds:
+    if b_med >= median:
+        r_biases.append(b_med)
+    else:
+        l_biases.append(b_med)
+
 
 l_median = statistics.median(l_biases)
 r_median = statistics.median(r_biases)
@@ -77,7 +84,7 @@ for site in sites_to_save:
 
     if site[2] < l_median:
         l2_sites.append(site)
-    elif site[2] < 0:
+    elif site[2] < median:
         l1_sites.append(site)
     elif site[2] < r_median:
         r1_sites.append(site)

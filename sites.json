@@ -1,18 +1,6 @@
 [
     [
         [
-            "Axios",
-            "https://www.axios.com",
-            -6.0,
-            47.375
-        ],
-        [
-            "BuzzFeed",
-            "https://www.buzzfeednews.com",
-            -5.75,
-            45.67
-        ],
-        [
             "CNN",
             "https://www.cnn.com",
             -9.29,
@@ -61,18 +49,6 @@
             36.33
         ],
         [
-            "News and Guts",
-            "https://www.newsandguts.com",
-            -8.67,
-            35.67
-        ],
-        [
-            "Politico",
-            "https://www.politico.com",
-            -6.5,
-            46.25
-        ],
-        [
             "Progressive, The",
             "https://progressive.org",
             -16.96,
@@ -85,34 +61,16 @@
             33.71
         ],
         [
-            "Talking Points Memo",
-            "https://talkingpointsmemo.com",
-            -5.0,
-            40.25
-        ],
-        [
             "The Advocate",
             "https://www.advocate.com",
             -15.5,
             39.0
         ],
         [
-            "The Guardian",
-            "https://www.theguardian.com",
-            -6.5,
-            50.0
-        ],
-        [
             "The Nation",
             "https://www.thenation.com",
             -17.0,
             32.75
-        ],
-        [
-            "The New Yorker",
-            "https://www.newyorker.com",
-            -5.75,
-            42.0
         ],
         [
             "Think Progress",
@@ -131,6 +89,98 @@
             "https://www.vox.com",
             -9.625,
             43.125
+        ]
+    ],
+    [
+        [
+            "Axios",
+            "https://www.axios.com",
+            -6.0,
+            47.375
+        ],
+        [
+            "BuzzFeed",
+            "https://www.buzzfeednews.com",
+            -5.75,
+            45.67
+        ],
+        [
+            "Foreign Policy",
+            "https://foreignpolicy.com",
+            -2.4,
+            42.0
+        ],
+        [
+            "Forward",
+            "https://forward.com",
+            -2.75,
+            38.125
+        ],
+        [
+            "New York Times",
+            "https://www.nytimes.com",
+            -3.25,
+            49.0
+        ],
+        [
+            "News and Guts",
+            "https://www.newsandguts.com",
+            -8.67,
+            35.67
+        ],
+        [
+            "Politico",
+            "https://www.politico.com",
+            -6.5,
+            46.25
+        ],
+        [
+            "ProPublica",
+            "https://www.propublica.org",
+            -4.75,
+            48.0
+        ],
+        [
+            "Quartz",
+            "https://qz.com",
+            -2.25,
+            40.25
+        ],
+        [
+            "Talking Points Memo",
+            "https://talkingpointsmemo.com",
+            -5.0,
+            40.25
+        ],
+        [
+            "The Atlantic",
+            "https://www.theatlantic.com",
+            -3.75,
+            41.875
+        ],
+        [
+            "The Guardian",
+            "https://www.theguardian.com",
+            -6.5,
+            50.0
+        ],
+        [
+            "The New Yorker",
+            "https://www.newyorker.com",
+            -5.75,
+            42.0
+        ],
+        [
+            "Time",
+            "http://time.com",
+            -3.75,
+            41.75
+        ],
+        [
+            "Washington Post",
+            "https://www.washingtonpost.com",
+            -3.75,
+            47.25
         ]
     ],
     [
@@ -159,6 +209,12 @@
             46.75
         ],
         [
+            "Bloomberg",
+            "https://www.bloomberg.com",
+            0.0,
+            49.67
+        ],
+        [
             "Business Insider",
             "https://www.businessinsider.com",
             -0.33,
@@ -171,22 +227,16 @@
             49.75
         ],
         [
+            "Christian Science Monitor",
+            "https://www.csmonitor.com",
+            0.0,
+            44.25
+        ],
+        [
             "EPI",
             "https://www.epi.org",
             -2.0,
             49.0
-        ],
-        [
-            "Foreign Policy",
-            "https://foreignpolicy.com",
-            -2.4,
-            42.0
-        ],
-        [
-            "Forward",
-            "https://forward.com",
-            -2.75,
-            38.125
         ],
         [
             "LA Times",
@@ -201,12 +251,6 @@
             51.0
         ],
         [
-            "New York Times",
-            "https://www.nytimes.com",
-            -3.25,
-            49.0
-        ],
-        [
             "Newsy",
             "https://www.newsy.com",
             -1.335,
@@ -219,28 +263,10 @@
             46.75
         ],
         [
-            "ProPublica",
-            "https://www.propublica.org",
-            -4.75,
-            48.0
-        ],
-        [
-            "Quartz",
-            "https://qz.com",
-            -2.25,
-            40.25
-        ],
-        [
             "Reuters",
             "https://www.reuters.com",
             -0.33,
             52.33
-        ],
-        [
-            "The Atlantic",
-            "https://www.theatlantic.com",
-            -3.75,
-            41.875
         ],
         [
             "The Economist",
@@ -255,42 +281,36 @@
             46.75
         ],
         [
-            "Time",
-            "http://time.com",
-            -3.75,
-            41.75
-        ],
-        [
             "USA Today",
             "https://www.usatoday.com",
             -1.375,
             48.29
-        ],
-        [
-            "Washington Post",
-            "https://www.washingtonpost.com",
-            -3.75,
-            47.25
         ]
     ],
     [
         [
-            "Bloomberg",
-            "https://www.bloomberg.com",
-            0.0,
-            49.67
+            "Breitbart",
+            "https://www.breitbart.com",
+            18.125,
+            34.0
         ],
         [
-            "Christian Science Monitor",
-            "https://www.csmonitor.com",
-            0.0,
-            44.25
+            "Conservative Tribune",
+            "https://www.westernjournal.com",
+            18.75,
+            36.67
         ],
         [
             "Daily Mail",
             "https://www.dailymail.co.uk",
             2.835,
             35.96
+        ],
+        [
+            "Daily Signal",
+            "https://www.dailysignal.com",
+            18.25,
+            33.33
         ],
         [
             "Financial Times",
@@ -323,38 +343,6 @@
             45.75
         ],
         [
-            "Reason",
-            "https://reason.com",
-            4.25,
-            37.75
-        ],
-        [
-            "Wall Street Journal",
-            "https://www.wsj.com",
-            1.33,
-            50.25
-        ]
-    ],
-    [
-        [
-            "Breitbart",
-            "https://www.breitbart.com",
-            18.125,
-            34.0
-        ],
-        [
-            "Conservative Tribune",
-            "https://www.westernjournal.com",
-            18.75,
-            36.67
-        ],
-        [
-            "Daily Signal",
-            "https://www.dailysignal.com",
-            18.25,
-            33.33
-        ],
-        [
             "New York Post",
             "https://nypost.com",
             5.125,
@@ -373,10 +361,22 @@
             37.375
         ],
         [
+            "Reason",
+            "https://reason.com",
+            4.25,
+            37.75
+        ],
+        [
             "The Blaze",
             "https://www.theblaze.com",
             17.0,
             33.5
+        ],
+        [
+            "Wall Street Journal",
+            "https://www.wsj.com",
+            1.33,
+            50.25
         ],
         [
             "Washington Examiner",
