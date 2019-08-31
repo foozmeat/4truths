@@ -1,6 +1,7 @@
 import json
 import os
 import platform
+import sys
 import time
 import urllib.request
 from datetime import datetime
@@ -14,7 +15,7 @@ from mastodon import Mastodon, MastodonAPIError, MastodonNetworkError
 from selenium import webdriver
 
 width = 1200
-height = 1000
+height = 1100
 
 is_linux = platform.system() == 'Linux'
 debug = os.getenv('DEBUG', False)
@@ -68,7 +69,6 @@ description = "Front pages of\n"
 """
 create mastodon API
 """
-m_config = json.load(open('config.json', 'r'))
 
 mast_api = Mastodon(
         client_id=m_config['client_key'],
@@ -76,21 +76,22 @@ mast_api = Mastodon(
         api_base_url=m_config['client_host'],
         access_token=m_config['access_token'],
         debug_requests=False,
-        request_timeout=15,
-        ratelimit_method='throw'
+        request_timeout=15
 )
 
 media_ids = []
-
+now = datetime.now()
+post_body = f"{now.strftime('%c')}\n"
 """
 Capture the site images
 """
-date = datetime.now().strftime('%Y%m%d%H%M%S')
+date = now.strftime('%Y%m%d%H%M%S')
 cap_folder = Path(f'caps/{date}')
 cap_folder.mkdir()
 
 for (name, url, b, q) in sites:
-    print(name, url)
+    if debug:
+        print(name, url, b, q)
     driver.get(url)
     cap = driver.get_screenshot_as_png()
     im = Image.open(BytesIO(cap))
@@ -98,7 +99,19 @@ for (name, url, b, q) in sites:
     im.save(cap_path)
     images.append(im)
     description = f"Front page of {name}\n"
-    media_ids.append(mast_api.media_post(cap_path, description=description))
+    post_body += f"{name}\n"
+
+    media_posted = False
+    while not media_posted:
+        try:
+            if debug:
+                print(f"posting image for {name}")
+            media_ids.append(mast_api.media_post(cap_path, description=description))
+            media_posted = True
+
+        except MastodonNetworkError as e:
+            print(e, file=sys.stderr)
+            time.sleep(15)
 
 driver.quit()
 
@@ -106,38 +119,25 @@ if is_linux:
     display.stop()
 
 """
-Combine the site images
-"""
-# w, h = images[0].size
-#
-# comp_image = Image.new('RGB', (w, h * 4))
-#
-# for i in range(4):
-#     comp_image.paste(images[i], (0, (i * h)))
-#
-# comp_path = f'{cap_folder}/comp-{width}-{height}.jpg'
-# comp_image.save(comp_path)
-
-"""
 Send toot
 """
 
-if not debug:
-    posted = False
+posted = False
 
-    while not posted:
-        try:
-            # media_id = [mast_api.media_post(comp_path, description=description)]
+while not posted:
+    try:
 
-            post = mast_api.status_post(
-                    u"\u2063",
-                    media_ids=media_ids,
-                    visibility='private',
-                    sensitive=False)
+        if debug:
+            print("Posting to Mastodon")
 
-            posted = True
+        post = mast_api.status_post(
+                post_body,
+                media_ids=media_ids,
+                sensitive=False)
 
-        except (MastodonAPIError, MastodonNetworkError) as e:
-            print(e, file=stderr)
-            time.sleep(15)
+        posted = True
+
+    except (MastodonAPIError, MastodonNetworkError) as e:
+        print(e, file=stderr)
+        time.sleep(15)
 
