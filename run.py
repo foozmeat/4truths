@@ -19,6 +19,12 @@ height = 1000
 is_linux = platform.system() == 'Linux'
 debug = os.getenv('DEBUG', False)
 
+m_config = json.load(open('config.json', 'r'))
+
+if m_config.get('sentry_url') and not debug:
+    import sentry_sdk
+    sentry_sdk.init(m_config.get('sentry_url'))
+
 """
 Download uBlock
 """

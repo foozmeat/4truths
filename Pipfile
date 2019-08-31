@@ -10,6 +10,7 @@ selenium = "*"
 PyVirtualDisplay = "*"
 Pillow = "*"
 "Mastodon.py" = "*"
+sentry-sdk = "*"
 
 [requires]
 python_version = "3.7"
