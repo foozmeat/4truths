@@ -81,7 +81,8 @@ mast_api = Mastodon(
 
 media_ids = []
 now = datetime.now()
-post_body = f"{now.strftime('%c')}\n"
+post_body = ""
+
 """
 Capture the site images
 """
@@ -128,7 +129,7 @@ while not posted:
     try:
 
         if debug:
-            print("Posting to Mastodon")
+            print(post_body)
 
         post = mast_api.status_post(
                 post_body,
