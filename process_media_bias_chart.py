@@ -6,6 +6,8 @@ from urllib.parse import urlparse
 input_csv = 'Interactive Media Bias Chart - Ad Fontes Media.csv'
 sites = {}
 
+QUALITY_CUTOFF = 30
+
 """
 Collect the data
 """
@@ -41,6 +43,8 @@ sites_to_remove = [
     'OZY',
     'Weather.com',
     'Marketwatch',
+    'PBS',
+
 ]
 
 """
@@ -51,7 +55,7 @@ all_b_meds = []
 for site, data in sites.items():
     q_med = statistics.median(data['q'])
 
-    if q_med >= 32.0 and site not in sites_to_remove:
+    if q_med >= QUALITY_CUTOFF and site not in sites_to_remove:
         b_med = statistics.median(data['b'])
         all_b_meds.append(b_med)
 

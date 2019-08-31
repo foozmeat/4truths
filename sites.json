@@ -1,10 +1,10 @@
 [
     [
         [
-            "CNN",
-            "https://www.cnn.com",
-            -9.29,
-            40.29
+            "Counterpunch",
+            "https://www.counterpunch.org",
+            -15.75,
+            30.5
         ],
         [
             "Daily Beast",
@@ -17,6 +17,12 @@
             "https://www.democracynow.org",
             -17.75,
             38.25
+        ],
+        [
+            "FreeSpeech TV",
+            "https://freespeech.org",
+            -19.5,
+            31.75
         ],
         [
             "Huffington Post",
@@ -79,6 +85,12 @@
             35.33
         ],
         [
+            "Truthout",
+            "https://truthout.org",
+            -21.375,
+            30.375
+        ],
+        [
             "Vice",
             "https://news.vice.com",
             -10.75,
@@ -103,6 +115,12 @@
             "https://www.buzzfeednews.com",
             -5.75,
             45.67
+        ],
+        [
+            "CNN",
+            "https://www.cnn.com",
+            -9.29,
+            40.29
         ],
         [
             "Foreign Policy",
@@ -169,6 +187,12 @@
             "https://www.newyorker.com",
             -5.75,
             42.0
+        ],
+        [
+            "The Week",
+            "https://theweek.com",
+            -8.335,
+            31.54
         ],
         [
             "Time",
@@ -239,6 +263,18 @@
             49.0
         ],
         [
+            "Forbes",
+            "https://www.forbes.com",
+            0.375,
+            38.665
+        ],
+        [
+            "Fortune",
+            "http://fortune.com",
+            0.625,
+            47.0
+        ],
+        [
             "LA Times",
             "https://www.latimes.com",
             -2.0,
@@ -257,12 +293,6 @@
             50.875
         ],
         [
-            "PBS",
-            "https://www.pbs.org",
-            -0.875,
-            46.75
-        ],
-        [
             "Reuters",
             "https://www.reuters.com",
             -0.33,
@@ -279,6 +309,12 @@
             "https://thehill.com",
             -1.25,
             46.75
+        ],
+        [
+            "UrNews24",
+            "http://www.urnews24.com",
+            0.0,
+            30.5
         ],
         [
             "USA Today",
@@ -325,22 +361,22 @@
             44.25
         ],
         [
-            "Forbes",
-            "https://www.forbes.com",
-            0.375,
-            38.665
-        ],
-        [
-            "Fortune",
-            "http://fortune.com",
-            0.625,
-            47.0
+            "Fox News",
+            "https://www.foxnews.com",
+            18.75,
+            30.75
         ],
         [
             "IJR",
             "https://ijr.com",
             4.125,
             45.75
+        ],
+        [
+            "National Review",
+            "https://www.nationalreview.com",
+            15.555,
+            30.375
         ],
         [
             "New York Post",
@@ -361,10 +397,22 @@
             37.375
         ],
         [
+            "PJ Media",
+            "https://pjmedia.com",
+            14.25,
+            30.67
+        ],
+        [
             "Reason",
             "https://reason.com",
             4.25,
             37.75
+        ],
+        [
+            "The American Conservative",
+            "https://www.theamericanconservative.com",
+            11.835,
+            30.335
         ],
         [
             "The Blaze",
