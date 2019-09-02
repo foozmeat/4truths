@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 input_csv = 'Interactive Media Bias Chart - Ad Fontes Media.csv'
 sites = {}
 
-QUALITY_CUTOFF = 30
+QUALITY_CUTOFF = 24
 
 """
 Collect the data
@@ -37,14 +37,15 @@ r_biases = []
 
 sites_to_save = []
 sites_to_remove = [
-    'The Skimm',
-    'Jacobin',
-    'Vanity Fair',
-    'OZY',
-    'Weather.com',
-    'Marketwatch',
-    'PBS',
-
+    'The Skimm',  # More of a newsletter
+    'Jacobin',  # Not a daily
+    'Vanity Fair',  # Not a daily
+    'OZY',  # Not a daily
+    'Weather.com',  # Not general news
+    'PBS',  # Not a daily
+    'EPI',  # Not a daily
+    'Quartz',  # Not a daily
+    ''
 ]
 
 """
@@ -62,6 +63,8 @@ for site, data in sites.items():
         data = (site, sites[site]['url'], b_med, q_med)
         sites_to_save.append(data)
 
+sorted_sites_to_save = sorted(sites_to_save, key=lambda tup: tup[2])
+
 median = statistics.median(all_b_meds)
 print(f"Overall median is {median}")
 for b_med in all_b_meds:
@@ -69,7 +72,6 @@ for b_med in all_b_meds:
         r_biases.append(b_med)
     else:
         l_biases.append(b_med)
-
 
 l_median = statistics.median(l_biases)
 r_median = statistics.median(r_biases)
@@ -84,16 +86,20 @@ l1_sites = []
 r1_sites = []
 r2_sites = []
 
-for site in sites_to_save:
+for site in sorted_sites_to_save:
 
     if site[2] < l_median:
         l2_sites.append(site)
+        print("L2", site)
     elif site[2] < median:
         l1_sites.append(site)
+        print("L1", site)
     elif site[2] < r_median:
         r1_sites.append(site)
+        print("R1", site)
     else:
         r2_sites.append(site)
+        print("R2", site)
 
 print("Bucket Sizes", len(l2_sites), len(l1_sites), len(r1_sites), len(r2_sites), )
 

@@ -7,7 +7,7 @@ The 4thruths bot posts the front pages of 4 news sites each day. It pulls from a
 The site list is processed in the following ways:
 
 * Remove sites below the recommended quality cutoff of 24
-* Remove sites if they won't producr good visual results
+* Remove sites if they won't produce good visual results
 * Calculate the median bias for each site
 * Calculate the overall median (`Om`) of all sites
 * Calculate the median of biases less than `Om` (`Lm`) and greater than or equal to `Om` (`Rm`)
