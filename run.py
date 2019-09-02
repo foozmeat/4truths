@@ -15,10 +15,11 @@ from mastodon import Mastodon, MastodonAPIError, MastodonNetworkError
 from selenium import webdriver
 
 width = 1200
-height = 1100
+height = 1200
 
 is_linux = platform.system() == 'Linux'
 debug = os.getenv('DEBUG', False)
+nopost = os.getenv('NOPOST', False)
 
 m_config = json.load(open('config.json', 'r'))
 
@@ -107,7 +108,8 @@ for (name, url, b, q) in sites:
         try:
             if debug:
                 print(f"posting image for {name}")
-            media_ids.append(mast_api.media_post(cap_path, description=description))
+            if not nopost:
+                media_ids.append(mast_api.media_post(cap_path, description=description))
             media_posted = True
 
         except MastodonNetworkError as e:
@@ -131,10 +133,11 @@ while not posted:
         if debug:
             print(post_body)
 
-        post = mast_api.status_post(
-                post_body,
-                media_ids=media_ids,
-                sensitive=False)
+        if not nopost:
+            nopost = mast_api.status_post(
+                    post_body,
+                    media_ids=media_ids,
+                    sensitive=False)
 
         posted = True
 
