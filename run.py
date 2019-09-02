@@ -18,8 +18,8 @@ width = 1200
 height = 1200
 
 is_linux = platform.system() == 'Linux'
-debug = os.getenv('DEBUG', False)
-nopost = os.getenv('NOPOST', False)
+debug = bool(int(os.getenv('DEBUG', False)))
+post = bool(int(os.getenv('POST', True)))
 
 m_config = json.load(open('config.json', 'r'))
 
@@ -108,7 +108,7 @@ for (name, url, b, q) in sites:
         try:
             if debug:
                 print(f"posting image for {name}")
-            if not nopost:
+            if post:
                 media_ids.append(mast_api.media_post(cap_path, description=description))
             media_posted = True
 
@@ -133,8 +133,8 @@ while not posted:
         if debug:
             print(post_body)
 
-        if not nopost:
-            nopost = mast_api.status_post(
+        if post:
+            post = mast_api.status_post(
                     post_body,
                     media_ids=media_ids,
                     sensitive=False)
