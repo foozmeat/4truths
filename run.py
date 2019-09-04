@@ -15,7 +15,7 @@ from mastodon import Mastodon, MastodonAPIError, MastodonNetworkError
 from selenium import webdriver
 
 width = 1200
-height = 1200
+height = 1300
 
 is_linux = platform.system() == 'Linux'
 debug = bool(int(os.getenv('DEBUG', False)))
@@ -25,6 +25,7 @@ m_config = json.load(open('config.json', 'r'))
 
 if m_config.get('sentry_url') and not debug:
     import sentry_sdk
+
     sentry_sdk.init(m_config.get('sentry_url'))
 
 """
@@ -95,6 +96,7 @@ for (name, url, b, q) in sites:
     if debug:
         print(name, url, b, q)
     driver.get(url)
+    time.sleep(5)  # give the page a chance to load
     cap = driver.get_screenshot_as_png()
     im = Image.open(BytesIO(cap))
     cap_path = f'{cap_folder}/{name}.png'
@@ -144,4 +146,3 @@ while not posted:
     except (MastodonAPIError, MastodonNetworkError) as e:
         print(e, file=stderr)
         time.sleep(15)
-
